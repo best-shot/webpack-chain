@@ -1,9 +1,12 @@
 {
   "name": "webpack-chain-next",
-  "version": "8.0.1",
+  "version": "8.1.0",
   "main": "src/Config.js",
   "typings": "types/index.d.ts",
-  "repository": "sorrycc/webpack-chain",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/linhuibin98/webpack-chain.git"
+  },
   "keywords": [
     "webpack",
     "config",
