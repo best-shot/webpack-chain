@@ -1,5 +1,5 @@
 {
-  "name": "webpack-5-chain",
+  "name": "webpack-chain-next",
   "version": "8.0.1",
   "main": "src/Config.js",
   "typings": "types/index.d.ts",
