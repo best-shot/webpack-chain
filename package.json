@@ -1,18 +1,19 @@
 {
   "name": "webpack-chain-next",
-  "version": "8.1.0",
+  "version": "8.1.1",
   "main": "src/Config.js",
   "typings": "types/index.d.ts",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/linhuibin98/webpack-chain.git"
+    "url": "git+https://github.com/linhuibin98/webpack-chain-next.git"
   },
   "keywords": [
     "webpack",
     "config",
     "chain",
     "fluent",
-    "api"
+    "api",
+    "webpack5"
   ],
   "engines": {
     "node": ">=10"
