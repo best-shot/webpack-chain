@@ -33,6 +33,10 @@ module.exports = class extends ChainedMap {
     this.performance = new Performance(this);
     // https://webpack.js.org/configuration/node/
     this.node = new ChainedValueMap(this);
+    // https://webpack.js.org/configuration/experiments
+    this.experiments = new ChainedValueMap(this);
+    this.experiments.extend(['lazyCompilation', 'outputModule']);
+
     this.extend([
       // https://webpack.js.org/configuration/entry-context/
       'context',
@@ -51,8 +55,6 @@ module.exports = class extends ChainedMap {
       'externalsPresets',
       // https://webpack.js.org/configuration/stats/
       'stats',
-      // https://webpack.js.org/configuration/experiments
-      'experiments',
       // https://webpack.js.org/configuration/other-options
       'amd',
       'bail',
@@ -148,6 +150,7 @@ module.exports = class extends ChainedMap {
     return this.clean(
       Object.assign(baseConfig, {
         node: this.node.entries(),
+        experiments: this.experiments.entries(),
         output: this.output.entries(),
         resolve: this.resolve.toConfig(),
         resolveLoader: this.resolveLoader.toConfig(),

@@ -8,6 +8,7 @@ module.exports = class extends ChainedMap {
     this.alias = new ChainedMap(this);
     this.aliasFields = new ChainedSet(this);
     this.descriptionFiles = new ChainedSet(this);
+    this.extensionAlias = new ChainedMap(this);
     this.extensions = new ChainedSet(this);
     this.mainFields = new ChainedSet(this);
     this.mainFiles = new ChainedSet(this);
@@ -26,6 +27,7 @@ module.exports = class extends ChainedMap {
       'enforceExtension',
       'symlinks',
       'unsafeCache',
+      'useSyncFileSystemCalls',
       'preferRelative',
       'preferAbsolute',
     ]);
@@ -45,6 +47,7 @@ module.exports = class extends ChainedMap {
         aliasFields: this.aliasFields.values(),
         conditionNames: this.conditionNames.values(),
         descriptionFiles: this.descriptionFiles.values(),
+        extensionAlias: this.extensionAlias.entries(),
         extensions: this.extensions.values(),
         mainFields: this.mainFields.values(),
         mainFiles: this.mainFiles.values(),
@@ -66,14 +69,17 @@ module.exports = class extends ChainedMap {
       'aliasFields',
       'conditionNames',
       'descriptionFiles',
+      'extensionAlias',
       'extensions',
       'mainFields',
       'mainFiles',
+      'modules',
       'exportsFields',
       'importsFields',
       'restrictions',
       'roots',
-      'modules',
+      'fallback',
+      'byDependency',
     ];
 
     if (!omit.includes('plugin') && 'plugin' in obj) {

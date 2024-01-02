@@ -1,4 +1,5 @@
 const ChainedMap = require('./ChainedMap');
+const ChainedValueMap = require('./ChainedValueMap');
 const ChainedSet = require('./ChainedSet');
 const Orderable = require('./Orderable');
 const Use = require('./Use');
@@ -31,6 +32,9 @@ const Rule = Orderable(
       this.oneOfs = new ChainedMap(this);
       this.resolve = new Resolve(this);
       this.resolve.extend(['fullySpecified']);
+      this.generator = new ChainedValueMap(this);
+      this.generator.extend(['filename']);
+
       this.extend([
         'enforce',
         'issuer',
@@ -38,7 +42,8 @@ const Rule = Orderable(
         'layer',
         'mimetype',
         'parser',
-        'generator',
+        // 'generator',
+        'dependency',
         'resource',
         'resourceQuery',
         'sideEffects',
@@ -79,6 +84,7 @@ const Rule = Orderable(
           oneOf: this.oneOfs.values().map((oneOf) => oneOf.toConfig()),
           use: this.uses.values().map((use) => use.toConfig()),
           resolve: this.resolve.toConfig(),
+          generator: this.generator.entries(),
         }),
       );
 

@@ -1,11 +1,11 @@
 {
-  "name": "webpack-chain-next",
-  "version": "8.1.1",
+  "name": "@best-shot/webpack-chain",
+  "version": "8.1.4",
   "main": "src/Config.js",
   "typings": "types/index.d.ts",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/linhuibin98/webpack-chain-next.git"
+    "url": "git+https://github.com/best-shot/webpack-chain.git"
   },
   "keywords": [
     "webpack",
@@ -22,7 +22,6 @@
     "src",
     "types/*.d.ts"
   ],
-  "author": "Eli Perelman <eli@eliperelman.com>",
   "license": "MPL-2.0",
   "scripts": {
     "fix": "yarn lint:fix && yarn style:fix",
@@ -37,7 +36,7 @@
   },
   "dependencies": {
     "deepmerge": "^1.5.2",
-    "javascript-stringify": "^2.0.1"
+    "javascript-stringify": "^2.1.0"
   },
   "devDependencies": {
     "@types/enhanced-resolve": "^3.0.6",
@@ -53,6 +52,10 @@
     "jest": "^27.0.0",
     "prettier": "^2.0.5",
     "typescript": "^4.0.0",
-    "webpack": "^5.0.0"
+    "webpack": "^5.89.0"
+  },
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org/"
   }
 }
