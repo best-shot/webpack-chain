@@ -35,7 +35,15 @@ module.exports = class extends ChainedMap {
     this.node = new ChainedValueMap(this);
     // https://webpack.js.org/configuration/experiments
     this.experiments = new ChainedValueMap(this);
-    this.experiments.extend(['lazyCompilation', 'outputModule']);
+    this.experiments.extend([
+      'asyncWebAssembly',
+      'buildHttp',
+      'cacheUnaffected',
+      'lazyCompilation',
+      'outputModule',
+      'syncWebAssembly',
+      'topLevelAwait',
+    ]);
 
     this.extend([
       // https://webpack.js.org/configuration/entry-context/

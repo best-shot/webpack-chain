@@ -8,6 +8,8 @@ module.exports = class extends ChainedMap {
     this.defaultRules = new ChainedMap(this);
     this.generator = new ChainedMap(this);
     this.parser = new ChainedMap(this);
+    this.parser.extend(['javascript']);
+
     this.extend([
       'noParse',
       'unsafeCache',
