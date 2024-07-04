@@ -36,16 +36,16 @@ const Rule = Orderable(
       this.generator.extend(['filename']);
 
       this.extend([
+        'dependency',
         'enforce',
         'issuer',
         'issuerLayer',
         'layer',
         'mimetype',
         'parser',
-        // 'generator',
-        'dependency',
         'resource',
         'resourceQuery',
+        'scheme',
         'sideEffects',
         'test',
         'type',
