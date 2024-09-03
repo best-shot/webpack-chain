@@ -250,7 +250,7 @@ declare namespace Config {
     port?: string | number | undefined;
     protocol?: string | undefined;
     username?: string | undefined;
-  };
+  }
   interface ClientConfiguration {
     logging?:
       | 'none'
@@ -271,7 +271,7 @@ declare namespace Config {
     reconnect?: number | boolean | undefined;
     webSocketTransport?: string | undefined;
     webSocketURL?: string | WebSocketURL | undefined;
-  };
+  }
 
   // await for @types/webpack-dev-server update do v4 to remove all any
   class DevServer extends ChainedMap<Config> {
@@ -376,7 +376,10 @@ declare namespace Config {
   class Resolve<T = Config> extends ChainedMap<T> {
     alias: TypedChainedMap<this, { [key: string]: string | false | string[] }>;
     aliasFields: TypedChainedSet<this, WebpackResolve['aliasFields'][number]>;
-    conditionNames: TypedChainedSet<this, WebpackResolve['conditionNames'][number]>;
+    conditionNames: TypedChainedSet<
+      this,
+      WebpackResolve['conditionNames'][number]
+    >;
     descriptionFiles: TypedChainedSet<
       this,
       WebpackResolve['descriptionFiles'][number]

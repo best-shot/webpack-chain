@@ -32,20 +32,29 @@ const Rule = Orderable(
       this.oneOfs = new ChainedMap(this);
       this.resolve = new Resolve(this);
       this.resolve.extend(['fullySpecified']);
+
       this.generator = new ChainedValueMap(this);
-      this.generator.extend(['filename']);
+      this.generator.extend([
+        'dataUrl',
+        'emit',
+        'filename',
+        'outputPath',
+        'publicPath',
+      ]);
+
+      this.parser = new ChainedValueMap(this);
+      this.parser.extend(['parse']);
 
       this.extend([
+        'dependency',
         'enforce',
         'issuer',
         'issuerLayer',
         'layer',
         'mimetype',
-        'parser',
-        // 'generator',
-        'dependency',
         'resource',
         'resourceQuery',
+        'scheme',
         'sideEffects',
         'test',
         'type',

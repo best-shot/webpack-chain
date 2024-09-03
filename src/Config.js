@@ -35,7 +35,18 @@ module.exports = class extends ChainedMap {
     this.node = new ChainedValueMap(this);
     // https://webpack.js.org/configuration/experiments
     this.experiments = new ChainedValueMap(this);
-    this.experiments.extend(['lazyCompilation', 'outputModule']);
+    this.experiments.extend([
+      'asyncWebAssembly',
+      'buildHttp',
+      'cacheUnaffected',
+      'lazyCompilation',
+      'outputModule',
+      'syncWebAssembly',
+      'topLevelAwait',
+    ]);
+
+    this.watchOptions = new ChainedMap(this);
+    this.watchOptions.extend(['ignored']);
 
     this.extend([
       // https://webpack.js.org/configuration/entry-context/
@@ -48,7 +59,6 @@ module.exports = class extends ChainedMap {
       'target',
       // https://webpack.js.org/configuration/watch/
       'watch',
-      'watchOptions',
       // https://webpack.js.org/configuration/externals/
       'externals',
       'externalsType',
@@ -157,6 +167,7 @@ module.exports = class extends ChainedMap {
         devServer: this.devServer.toConfig(),
         module: this.module.toConfig(),
         optimization: this.optimization.toConfig(),
+        watchOptions: this.watchOptions.entries(),
         plugins: this.plugins.values().map((plugin) => plugin.toConfig()),
         performance: this.performance.entries(),
         entry: Object.keys(entryPoints).reduce(
@@ -182,6 +193,7 @@ module.exports = class extends ChainedMap {
       'optimization',
       'performance',
       'module',
+      'watchOptions',
     ];
 
     if (!omit.includes('entry') && 'entry' in obj) {

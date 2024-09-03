@@ -1,8 +1,20 @@
 const ChainedMap = require('./ChainedMap');
+const ChainedValueMap = require('./ChainedValueMap');
 
 module.exports = class extends ChainedMap {
   constructor(parent) {
     super(parent);
+
+    this.library = new ChainedValueMap(this);
+    this.library.extend([
+      'amdContainer',
+      // 'name',
+      'type',
+      'export',
+      'auxiliaryComment',
+      'umdNamedDefine',
+    ]);
+
     this.extend([
       'asyncChunks',
       'auxiliaryComment',

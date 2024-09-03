@@ -7,6 +7,8 @@ module.exports = class extends ChainedMap {
     super(parent);
     this.minimizers = new ChainedMap(this);
     this.splitChunks = new ChainedValueMap(this);
+    this.splitChunks.extend(['maxAsyncRequests', 'cacheGroups']);
+
     this.extend([
       'minimize',
       'runtimeChunk',

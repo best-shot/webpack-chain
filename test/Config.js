@@ -86,7 +86,7 @@ test('cache', () => {
     cacheDirectory: './',
   });
 
-  expect(instanceBoolean.get('cache')).toStrictEqual({
+  expect(instanceObject.get('cache')).toStrictEqual({
     allowCollectingMemory: true,
     cacheDirectory: './',
   });
