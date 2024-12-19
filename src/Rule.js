@@ -58,6 +58,7 @@ const Rule = Orderable(
         'sideEffects',
         'test',
         'type',
+        'with',
       ]);
     }
 
