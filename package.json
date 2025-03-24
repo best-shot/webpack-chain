@@ -1,6 +1,6 @@
 {
   "name": "@best-shot/webpack-chain",
-  "version": "8.1.10",
+  "version": "8.1.11",
   "main": "src/Config.js",
   "typings": "types/index.d.ts",
   "repository": {

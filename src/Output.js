@@ -40,7 +40,6 @@ module.exports = class extends ChainedMap {
       'hotUpdateChunkFilename',
       'hotUpdateGlobal',
       'hotUpdateMainFilename',
-      'library',
       'libraryExport',
       'libraryTarget',
       'importFunctionName',
