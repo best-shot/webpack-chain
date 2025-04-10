@@ -43,6 +43,7 @@ module.exports = class extends ChainedMap {
       'outputModule',
       'syncWebAssembly',
       'topLevelAwait',
+      'layers'
     ]);
 
     this.watchOptions = new ChainedMap(this);
