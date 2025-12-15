@@ -1,6 +1,6 @@
 {
   "name": "@best-shot/webpack-chain",
-  "version": "8.1.12",
+  "version": "8.1.13",
   "main": "src/Config.js",
   "typings": "types/index.d.ts",
   "repository": {
@@ -39,8 +39,8 @@
     "javascript-stringify": "^2.1.0"
   },
   "devDependencies": {
-    "@bring-it/cli": "^0.9.9",
-    "@bring-it/npm": "^0.5.9",
+    "@bring-it/cli": "^0.11.1",
+    "@bring-it/npm": "^0.9.3",
     "@types/enhanced-resolve": "^3.0.7",
     "@types/tapable": "^1.0.12",
     "@types/webpack": "^5.28.5",
